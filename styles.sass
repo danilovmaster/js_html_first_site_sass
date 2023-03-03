@@ -1,0 +1,509 @@
+$font-Playfair: 'Playfair Display', serif
+$font-Prata: 'Prata', serif
+$font-roboto: 'Roboto', sans-serif
+$grid-3-column: repeat(3, 1fr)
+$grid-2-column: repeat(2, 1fr)
+$grid-1-column: 1fr
+$position-absolute: absolute
+$tac: center
+
+body
+	padding: 0
+	margin: 0
+	font-family: $font-roboto
+
+.grid
+	display: grid
+	align-items: $tac
+
+section
+	padding: 0 185px
+
+h1, h2, h3, .logo
+	font-family: $font-Playfair
+h1
+	font-size: 45px
+	font-weight: 400
+	line-height: 60px
+	letter-spacing: 0em
+	text-align: left
+	color: #1B1A17
+	position: relative
+
+	&:before
+		content: ''
+		display: block
+		width: 50px
+		height: 1px
+		background: #8B8371
+		position: $position-absolute
+
+		left: -70px
+		top: 33px
+
+h2
+	font-style: normal
+	font-weight: 400
+	font-size: 32px
+	line-height: 43px
+	color: #1B1A17
+
+a
+	color: #000
+	text-decoration: none
+
+ul
+	list-style-type: none
+	padding: 0
+	margin: 0
+
+img
+	max-width: 100%
+
+a.button
+	display: flex
+	width: 205px
+	height: 64px
+	font-style: normal
+	font-weight: 500
+	font-size: 12px
+	line-height: 14px
+	letter-spacing: 0.05em
+	text-transform: uppercase
+	color: #FFFFFF
+	justify-content: $tac
+	align-items: $tac
+
+.header
+	padding: 31px 97px
+	grid-template-columns: $grid-3-column
+
+	.logo
+		grid-template-columns: 1fr 14fr
+
+.header__main__ul 
+	grid-template-columns: repeat(4, 1fr)
+
+	li a
+		font-size: 14px
+		font-weight: 400
+		line-height: 16px
+		text-align: left
+		color: #555248
+
+.header__service__ul
+	width: 99px
+	margin: 0 0 0 auto
+	grid-template-columns: $grid-3-column
+
+.header__service__search:before
+	content: url(images/lens.svg)
+
+.header__service__favorite:before
+	content: url(images/favorite.svg)
+
+.header__service__basket:before
+	content: url(images/basket.svg)
+
+.header__mobile
+	display: none
+
+.clock
+	position: relative
+	grid-template-columns: $grid-2-column
+
+	.button
+		margin: 64px 0 0
+		background: #444240
+
+.clock__clock
+	font-weight: 300
+	font-size: 14px
+	line-height: 21px
+	color: rgba(27, 26, 23, 0.82)
+
+.clock__image
+	position: relative
+
+	&:before
+		content: url(images/Ellipse.png)
+		position: $position-absolute
+
+		left: -202px
+		z-index: -1
+		top: -16px
+
+.clock__top-left, .clock__bottom-right
+	position: $position-absolute
+
+	font-family: 'Prata', serif
+	display: block
+
+.clock__top-left
+	top: 155px
+	margin: 0 0 0 -65px
+
+	&:after
+		position: inherit
+		content: ''
+		width: 50px
+		height: 1px
+		background: #8B8371
+		margin: 9px 0 0 12px
+		
+.clock__bottom-right
+	bottom: 140px
+	right: -50px
+
+	&:before 
+		position: inherit
+		content: ''
+		width: 50px
+		height: 1px
+		background: #8B8371
+		margin: 9px 0 0 -65px
+		
+.popular
+	margin: 79px 0 0
+	
+	h2
+		text-align: $tac
+		margin: 0
+
+.popular__all
+	display: block
+	text-align: right
+	font-weight: 500
+	font-size: 16px
+	line-height: 19px
+	color: #444240
+	margin: 0 0 0 auto
+
+	&:after
+		content: ''
+		display: block
+		width: 101px
+		border: 1px solid #C4C0B6
+		margin: 11.5px 0 65px auto
+
+.popular__grid
+	grid-template-columns: $grid-3-column
+
+.popular__model__title
+	font-family: 'Playfair Display', serif
+	font-style: normal
+	font-weight: 700
+	font-size: 14px
+	line-height: 24px
+	letter-spacing: 0.03em
+	display: block
+
+.popular__model__price
+	display: block
+	margin: 10px 0 0
+	font-family: 'Prata', serif
+	font-style: normal
+	font-weight: 400
+	font-size: 12px
+	line-height: 16px
+	color: rgba(27, 26, 23, 0.82)
+
+.popular__model__more
+	display: flex
+	font-family: 'Playfair Display', serif
+	font-style: normal
+	font-weight: 400
+	font-size: 16px
+	line-height: 21px
+	color: #1B1A17
+	align-items: $tac
+	position: relative
+	padding: 0 0 0 50px
+
+	&:before
+		content: ''
+		width: 30px
+		height: 0
+		border: 1px solid #8B8371
+		display: block
+		position: $position-absolute
+
+		left: 0
+		top: 11px
+
+.slider
+	margin: 100px 0 0
+	overflow-x: hidden
+	position: relative
+
+	&:after
+		content: url("images/lines_banner.png")
+		position: absolute
+		right: 0
+		top: -9%
+	
+	p
+		font-style: normal
+		font-weight: 400
+		font-size: 16px
+		line-height: 150%
+		color: #444240
+
+	.button
+		background: #D4B098
+
+.slider__grid
+	grid-template-columns: $grid-2-column
+
+	div:nth-of-type(2)
+		padding: 0 0 0 70px
+		box-sizing: border-box
+
+.news
+	margin: 134px 0
+
+.news__grid
+	grid-template-columns: $grid-2-column
+	
+.news__img_grid
+	grid-template-columns: 1fr 1.55fr
+	gap: 5px
+	grid-template-areas: "a b" "c b"
+	align-items: start
+
+.news__img_grid__3
+	margin: -183px 0 0 0px
+
+.social
+	margin: 120px 0 0
+
+.social .grid
+	grid-template-columns: $grid-3-column
+	max-width: 200px
+
+.footer
+	background: #444240
+	grid-template-columns: 1fr 3fr
+	align-items: start
+	padding: 79px 97px 67px
+
+	.logo
+		color: #fff
+		font-weight: 700
+		font-size: 14px
+		line-height: 19px
+		letter-spacing: 0.14em
+		grid-template-columns: 1fr 12fr
+
+
+.footer__logo ul
+	margin: 30px 0 0
+
+.footer__nav
+	grid-template-columns: $grid-3-column
+
+	ul li a
+		font-weight: 700
+		font-size: 14px
+		line-height: 16px
+		letter-spacing: 0.07em
+		text-transform: uppercase
+		color: #FFFFFF
+
+	ul li ul
+		margin: 33px 0
+
+.footer__nav ul li ul li a, .footer__logo ul li, .footer__logo ul li a
+	font-style: normal
+	font-weight: 400
+	font-size: 12px
+	line-height: 14px
+	color: rgba(255, 255, 255, 0.75)
+	text-transform: none
+
+.footer__nav ul li ul li, .footer__logo ul li
+	margin: 0 0 15px
+
+@media screen and (max-width: 1000px)
+	section
+		padding: 0 4vw
+	
+	.logo 
+		width: 121px
+	
+		img
+			max-width: unset
+	
+	.header
+		grid-template-columns: $grid-1-column
+		padding: 21px 4vw
+		position: fixed
+		z-index: 1
+		background: #fff
+		width: 92%
+	
+
+	.header__main__ul
+		margin: 20px auto
+	
+	.header__service__ul 
+		width: 50%
+		margin: 20px auto
+		text-align: $tac
+	
+	.header__mobile
+		display: block
+		position: absolute
+		right: 5vw
+		top: 25px
+		height: 10px
+		width: 16px
+		border-top: 1px solid #000
+		cursor: pointer
+		transition: all 1s ease
+	
+	.header__mobile:before, .header__mobile:after
+		display: block
+		content: ''
+		width: 16px
+		height: 1px
+		background: #000
+		position: inherit
+	
+	.header__mobile:before
+		top: 4.5px
+	
+	.header__mobile:after
+		top: 11.3px
+	
+	.header__mobile.close
+		border: none
+	
+	.header__mobile.close:before
+		transform: rotate(45deg)
+	
+	.header__mobile.close:after
+		transform: rotate(-45deg) translate(4px, -4px)
+	
+	.header__main, .header__service
+		visibility: hidden
+		opacity: 0
+		width: 0
+		height: 0
+		transition: all 1s ease
+	
+	.header__main.visible, .header__service.visible
+		visibility: visible
+		opacity: 1
+		width: auto
+		height: auto
+	
+	h1
+		text-align: $tac
+		margin: 30px auto 20px
+	
+	h1:before
+		left: -10px
+	
+	.clock
+		grid-template-columns: $grid-1-column
+		gap: 50px
+		text-align: $tac
+		overflow-x: hidden
+		padding: 50px 4vw 0
+	
+	.clock .button
+		margin: 30px auto 20px
+	
+	.clock__top-left, .clock__bottom-right
+		position: static
+		text-align: $tac
+		margin: 20px auto
+	
+	.clock__image:before
+		content: none
+	
+	.popular__all
+		text-align: $tac
+		margin: 20px auto
+	
+	.popular__all:after
+		margin: 11.5px auto 65px
+	
+	.popular__grid
+		grid-template-columns: $grid-1-column
+		gap: 50px
+	
+
+	.popular__model
+		span
+			text-align: $tac
+	
+	.popular__model
+		img
+			display: block
+			margin: auto
+	
+	.popular__model__more 
+		justify-content: $tac
+		display: block
+		padding: 0
+	
+		&:before
+			content: none
+	
+		&:after
+			content: ''
+			width: 70px
+			height: 0
+			border: 1px solid #8B8371
+			display: block
+			margin: 10px auto
+
+	.slider
+		&:after
+			content: none
+	
+	.slider__grid
+		grid-template-columns: $grid-1-column
+		gap: 50px
+		text-align: $tac
+	
+	.slider__grid
+		div:nth-of-type(2)
+			padding: 0
+	
+	.slider
+		.button
+			margin: 20px auto
+	
+	.news
+		margin: 50px 0 70px
+	
+	.news__grid
+		grid-template-columns: $grid-1-column
+		gap: 50px
+	
+
+	.news__img_grid__3
+		margin: -143px 0 0 0px
+	
+	.footer
+		grid-template-columns: $grid-1-column
+		padding: 50px 4vw
+	
+
+	.footer__logo
+		text-align: $tac
+	
+	.footer__nav
+		grid-template-columns: $grid-1-column
+		
+	.footer__nav ul
+		margin: 20px auto
+		text-align: $tac
+	
+
+
+
+		
